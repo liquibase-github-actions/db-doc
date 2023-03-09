@@ -21,9 +21,10 @@ message DbDocRequest {
   optional string driver_properties_file = 5; // The JDBC driver properties file
   string output_directory = 6; // *required* The directory where the documentation is generated
   optional string password = 7; // The database password
-  string url = 8; // *required* The JDBC database connection URL
-  optional string username = 9; // The database username
-  liquibase.GlobalOptions global_options = 10;
+  optional string schemas = 8; // Database schemas to include objects from in reporting
+  string url = 9; // *required* The JDBC database connection URL
+  optional string username = 10; // The database username
+  liquibase.GlobalOptions global_options = 11;
 }
 
 message Response {

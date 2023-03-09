@@ -6,7 +6,7 @@ Generates JavaDoc documentation for the existing database and changelogs
 ```yaml
 steps:
 - uses: actions/checkout@v3
-- uses: liquibase-github-actions/db-doc@v4.19.1
+- uses: liquibase-github-actions/db-doc@v4.20.0
   with:
     # The root changelog
     # string
@@ -48,6 +48,11 @@ steps:
     # Optional
     password: ""
 
+    # Database schemas to include objects from in reporting
+    # string
+    # Optional
+    schemas: ""
+
     # The database username
     # string
     # Optional
@@ -65,7 +70,7 @@ The liquibase db doc action accepts all valid liquibase global options as option
 ```yaml
 steps:
   - uses: actions/checkout@v3
-  - uses: liquibase-github-actions/db-doc@v4.19.1
+  - uses: liquibase-github-actions/db-doc@v4.20.0
     with:
       changelogFile: ""
       outputDirectory: ""
