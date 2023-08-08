@@ -8,7 +8,7 @@ steps:
 - uses: actions/checkout@v3
 - uses: liquibase-github-actions/db-doc@v4.23.0
   with:
-    # The root changelog
+    # The root changelog file
     # string
     # Required
     changelogFile: ""
@@ -22,6 +22,11 @@ steps:
     # string
     # Required
     url: ""
+
+    # Context string to use for filtering
+    # string
+    # Optional
+    contexts: ""
 
     # The default catalog name to use for the database connection
     # string
@@ -43,7 +48,12 @@ steps:
     # Optional
     driverPropertiesFile: ""
 
-    # The database password
+    # Label expression to use for filtering
+    # string
+    # Optional
+    labelFilter: ""
+
+    # Password to use to connect to the database
     # string
     # Optional
     password: ""
@@ -53,7 +63,7 @@ steps:
     # Optional
     schemas: ""
 
-    # The database username
+    # Username to use to connect to the database
     # string
     # Optional
     username: ""

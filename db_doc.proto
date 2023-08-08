@@ -14,17 +14,19 @@ service DbDocService {
 
 /* Generates JavaDoc documentation for the existing database and changelogs */
 message DbDocRequest {
-  string changelog_file = 1; // *required* The root changelog
-  optional string default_catalog_name = 2; // The default catalog name to use for the database connection
-  optional string default_schema_name = 3; // The default schema name to use for the database connection
-  optional string driver = 4; // The JDBC driver class
-  optional string driver_properties_file = 5; // The JDBC driver properties file
-  string output_directory = 6; // *required* The directory where the documentation is generated
-  optional string password = 7; // The database password
-  optional string schemas = 8; // Database schemas to include objects from in reporting
-  string url = 9; // *required* The JDBC database connection URL
-  optional string username = 10; // The database username
-  liquibase.GlobalOptions global_options = 11;
+  string changelog_file = 1; // *required* The root changelog file
+  optional string contexts = 2; // Context string to use for filtering
+  optional string default_catalog_name = 3; // The default catalog name to use for the database connection
+  optional string default_schema_name = 4; // The default schema name to use for the database connection
+  optional string driver = 5; // The JDBC driver class
+  optional string driver_properties_file = 6; // The JDBC driver properties file
+  optional string label_filter = 7; // Label expression to use for filtering
+  string output_directory = 8; // *required* The directory where the documentation is generated
+  optional string password = 9; // Password to use to connect to the database
+  optional string schemas = 10; // Database schemas to include objects from in reporting
+  string url = 11; // *required* The JDBC database connection URL
+  optional string username = 12; // Username to use to connect to the database
+  liquibase.GlobalOptions global_options = 13;
 }
 
 message Response {
