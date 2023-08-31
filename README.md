@@ -26,7 +26,7 @@ steps:
     # Context string to use for filtering
     # string
     # Optional
-    contexts: ""
+    contextFilter: ""
 
     # The default catalog name to use for the database connection
     # string
